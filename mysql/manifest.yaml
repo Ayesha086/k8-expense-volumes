@@ -42,7 +42,7 @@ spec:
       terminationGracePeriodSeconds: 10
       containers:
       - name: mysql
-        image: ayesha0540/mysql:1.0.0
+        image: ayeshacs540/mysql:1.0.0
         volumeMounts:
         - name: www
           mountPath: /var/lib/mysql
