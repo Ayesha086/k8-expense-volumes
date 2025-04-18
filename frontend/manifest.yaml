@@ -90,20 +90,20 @@ spec:
       containers:
       volumes:
       - name: nginx-config
-        configMap:
-         name: nginx-conf
-         items:
+          configMap:
+           name: nginx-conf
+           items:
            - key:nginx-conf
              path:nfinx.conf
-      - name: nginx
-        image: ayeshacs540/frontend:1.2.0
-        ports:
-        - containerPort: 8080
-        volumeMounts:
-        - name: nginx
-        mountPath: /etc/nginx/nginx.conf
-        subPath:  nginx.conf 
-        readOnly: true
+           - name: nginx
+             image: ayeshacs540/frontend:1.2.0
+             ports:
+             - containerPort: 8080
+               volumeMounts:
+                - name: nginx
+                  mountPath: /etc/nginx/nginx.conf
+                  subPath:  nginx.conf 
+                  readOnly: true
 ---
 apiVersion: v1
 kind: Service
