@@ -51,9 +51,11 @@ spec:
   - metadata:
       name: mysql
       namespace: expense
-      spec:
+    spec:
       accessModes: [ "ReadWriteOnce" ]
       storageClassName: "ebs-sc"
       resources:
-      requests:
-      storage: 1Gi
+       requests:
+        storage: 1Gi
+      
+ 
