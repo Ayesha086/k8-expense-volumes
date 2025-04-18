@@ -89,21 +89,21 @@ spec:
     spec:   
       containers:
       volumes:
-      - name: nginx-config
-          configMap:
-           name: nginx-conf
-           items:
-           - key:nginx-conf
-             path:nfinx.conf
-           - name: nginx
-             image: ayeshacs540/frontend:1.2.0
-             ports:
-             - containerPort: 8080
-               volumeMounts:
-                - name: nginx
-                  mountPath: /etc/nginx/nginx.conf
-                  subPath:  nginx.conf 
-                  readOnly: true
+      - name: nginx
+        configMap:
+          name: nginx
+          items:
+          - key: nginx.conf
+            path: nginx.conf
+      - name: nginx
+        image: ayeshacs540/frontend:1.2.0
+        ports:
+        - containerPort: 8080
+          volumeMounts:
+          - name: nginx
+            mountPath: /etc/nginx/nginx.conf
+            subPath:  nginx.conf 
+            readOnly: true
 ---
 apiVersion: v1
 kind: Service
@@ -113,9 +113,9 @@ metadata:
 spec: 
 type: LoadBalancer
 selector: #labels arre used as selectors
-        app: frontend
-        tier: web
-        project: expense 
+  app: frontend
+  tier: web
+  project: expense 
 ports:
   - protocol: TCP
     port: 80 #service port
