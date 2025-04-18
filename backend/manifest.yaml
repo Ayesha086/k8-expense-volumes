@@ -33,11 +33,11 @@ spec:
         tier: backend
         project: expense
     spec:   
-      containers:
-      - name: nginx
-        image: ayeshacs540/backend:1.0.0
-        envFrom:
-        - configMapRef:
+       containers:
+       - name: nginx
+         image: ayeshacs540/backend:1.0.0
+         envFrom:
+         - configMapRef:
            name: backend
 ---
 apiVersion: v1
