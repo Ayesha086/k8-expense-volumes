@@ -47,13 +47,13 @@ spec:
          - name: mysql
            mountPath: /var/lib/mysql
   # Instead of creating a pvc resource,you can directly provide in statefulset        
-        volumeClaimTemplates:
-        - metadata:
-          name: mysql
-          namespace: expense
-          spec:
-          accessModes: [ "ReadWriteOnce" ]
-          storageClassName: "ebs-sc"
-          resources:
-          requests:
-          storage: 1Gi
+  volumeClaimTemplates:
+  - metadata:
+      name: mysql
+      namespace: expense
+      spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: "ebs-sc"
+      resources:
+      requests:
+      storage: 1Gi
