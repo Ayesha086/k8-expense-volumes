@@ -32,7 +32,7 @@ spec:
         app: backend
         tier: backend
         project: expense
-  spec:   
+      spec:   
       containers:
       - name: nginx
         image: ayeshacs540/backend:1.0.0
