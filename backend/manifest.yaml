@@ -38,7 +38,8 @@ spec:
         image: ayeshacs540/backend:1.0.0
         envFrom:
         - configMapRef:
-           name: backend
+            name: backend
+
 ---
 apiVersion: v1
 kind: Service
@@ -47,9 +48,9 @@ metadata:
   namespace: expense
 spec: 
   selector: #labels arre used as selectors
-        app: backend
-        tier: backend
-        project: expense 
+    app: backend
+    tier: backend
+    project: expense 
   ports:
   - protocol: TCP
     port: 8080 #service port
